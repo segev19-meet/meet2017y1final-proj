@@ -34,11 +34,13 @@ turtle.penup()
 food.penup()
 food.hideturtle()
 turtle.hideturtle()
-turtle.register_shape("meat.gif")
-turtle.register_shape("pepper.gif")
-turtle.register_shape("apple.gif")
-turtle.register_shape("dairy_prod.gif")
-turtle.register_shape("carbs.gif")
+turtle.register_shape("amir.gif")
+turtle.register_shape("alex.gif")
+turtle.register_shape("doudou.gif")
+turtle.register_shape("key1.gif")
+turtle.register_shape("lorenzo.gif")
+turtle.register_shape("yun.gif")
+turtle.register_shape("abdalla.gif")
 
 def make_food():
     min_x=-int(SIZE_X/2/55)+1
@@ -50,17 +52,21 @@ def make_food():
     food.goto(food_x,food_y)
     
     
-    food_type = random.randint(1,5)
-    if food_type == 1:
-        food.shape("apple.gif")
+    food_type = random.randint(1,7)
+    if  food_type == 1:
+         food.shape("amir.gif")
     elif food_type==2:
-        food.shape("pepper.gif")
+        food.shape("alex.gif")
     elif food_type==3:
-        food.shape("meat.gif")
+        food.shape("doudou.gif")
     elif food_type==4:
-        food.shape("dairy_prod.gif")
-    else:
-        food.shape("carbs.gif")
+         food.shape("key1.gif")
+    elif food_type==5:
+        food.shape("lorenzo.gif")
+    elif food_type==6:
+         food.shape("yun.gif")
+    elif food_type==7:
+        food.shape("abdalla.gif")
     
 
     if (food_x,food_y) not in food_pos_list:   
@@ -81,19 +87,26 @@ ball=turtle.clone()
 
 def ball_appear():
     global kind
-    kind=random.randint(1,5)
+    kind=random.randint(1,7)
     print(kind)
 
-    if kind==1:
-        ball.shape("apple.gif")
+    if   kind==1:
+        ball.shape("amir.gif")
     elif kind==2:
-        ball.shape("pepper.gif")
+        ball.shape("alex.gif")
     elif kind==3:
-        ball.shape("meat.gif")
+        ball.shape("doudou.gif")
     elif kind==4:
-        ball.shape("dairy_prod.gif")
-    else:
-        ball.shape("carbs.gif")
+        ball.shape("key1.gif")
+    elif kind==5:
+        ball.shape("lorenzo.gif")
+
+    elif kind==6:
+        ball.shape("yun.gif")
+    elif kind==7:
+        ball.shape("abdalla.gif")
+
+        
 
     ball.goto(0,-200)
     ball.showturtle()
