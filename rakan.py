@@ -2,8 +2,8 @@ import turtle
 import random#we will need this later in the final-proj
 SIZE_X=800
 SIZE_Y=500
-
-
+turtle.tracer(1,)
+turtle.setup(SIZE_X,SIZE_Y)
 
 
 
@@ -13,49 +13,51 @@ SIZE_Y=500
 
 turtle.penup()
 turtle.register_shape("meat.gif")
+turtle.hideturtle()
 food = turtle.clone()
-food.shape("meat.gif")
-food.goto(100,100)
-
-
+##food.shape("meat.gif")
+##food.goto(100,100)
+##
+##
 turtle.register_shape("pepper.gif")
-food = turtle.clone()
-food.shape("pepper.gif")
-food.goto(100,150)
-
-
+##food = turtle.clone()
+##food.shape("pepper.gif")
+##food.goto(100,150)
+##
+##
 turtle.register_shape("apple.gif")
-food = turtle.clone()
-food.shape("apple.gif")
-food.goto(150,100)
-
-
+##food = turtle.clone()
+##food.shape("apple.gif")
+##food.goto(150,100)
+##
+##
 turtle.register_shape("dairy_prod.gif")
-food = turtle.clone()
-food.shape("dairy_prod.gif")
-food.goto(120,100)
-
-
-
+##food = turtle.clone()
+##food.shape("dairy_prod.gif")
+##food.goto(120,100)
+##
+##
+##
 turtle.register_shape("carbs.gif")
-food = turtle.clone()
-food.shape("carbs.gif")
-food.goto(150,150)
+##food = turtle.clone()
+##food.shape("carbs.gif")
+##food.goto(150,150)
 
 
 
 #write code that will set some_shape = to a random filename
 
-
+food_pos_list = []
     
 def make_food():
-    min_x=-int(SIZE_X/2)+1
-    max_x=int(SIZE_X/2)-1
-    min_y=-int(SIZE_Y/2)-1
-    max_y=int(SIZE_Y/2)+1
-    food_x = random.randint(0,max_x)
-    food_y = random.randint(-100,max_y)
+    min_x=-int(SIZE_X/2/55)+1
+    max_x=int(SIZE_X/2/55)-1
+    min_y=-int(SIZE_Y/2/55)+1
+    max_y=int(SIZE_Y/2/55)-1
+    food_x = random.randint(min_x,max_x)*55
+    food_y = random.randint(0,max_y)*55
     food.goto(food_x,food_y)
+    food_pos_list.append((food_x,food_y))
     
     food_type = random.randint(1,5)
     if food_type == 1:
@@ -68,11 +70,14 @@ def make_food():
         food.shape('dairy_prod.gif')
     else:
         food.shape('carbs.gif')
-        
 
-        
-    food.stamp()
-make_food()
+    if (food_x,food_y) not in food_pos_list[:-1]:   
+        food.stamp()
+    
+
+    
+for i in range(70):
+    make_food()
 
     
 
