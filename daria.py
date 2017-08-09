@@ -23,8 +23,9 @@ for i in range(50):
 
 
 
-
+score=0
 def pop_shape(x,y):
+    global score
     ball.goto(x,y)
     hit=turtle.pos()
     if hit in food_pos:
@@ -35,6 +36,7 @@ def pop_shape(x,y):
         ball.hideturtle()
         ball.goto(0,-200)
         ball.showturtle()
+        score+=1
         start_again()
     else:
         quit()
