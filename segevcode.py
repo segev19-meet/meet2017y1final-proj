@@ -4,22 +4,41 @@ SIZE_Y=600
 
 turtle.setup(SIZE_X, SIZE_Y)
 
-turtle.clone()
-turtle.goto(-50,0)
-points_counter=30
-def point_counter(): 
+points=turtle.clone()
+turtle.hideturtle()
+points.penup()
+points.hideturtle()
+points.goto(-300,-270)
+points_counter=20
+def compliments(): 
     global points_counter
+    points.write(points_counter, font=("Ariel",20,"normal"))
     if points_counter==10:
         turtle.clear()
-        turtle.color("blue")
-        turtle.write("keep going!",font=("Ariel",26,"normal"))
+        points.goto(-70,-50)
+        points.color("blue")
+        points.write("keep going!",font=("Ariel",20,"normal"))
     elif points_counter==20:
         turtle.clear()
-        turtle.write("you are doing great!")
+        points.goto(-120,-50)
+        points.color("green")
+        points.write("you are doing great!",font=("Ariel",20,"normal"))
     elif points_counter==30:
         turtle.clear()
-        turtle.write("nice work!,you on fire!!!",font=("Ariel",26,"normal"))
+        points.goto(-140,-50)
+        points.color("red")
+        points.write("nice work!you're on fire!!!",font=("Ariel",20,"normal"))
         
-point_counter()
+compliments()
 
-turtle.mainloop
+
+
+
+
+
+
+
+
+turtle.mainloop()
+
+
