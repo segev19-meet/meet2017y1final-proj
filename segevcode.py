@@ -10,7 +10,7 @@ points.penup()
 points.hideturtle()
 points.goto(-300,-270)
 points_counter=20
-def compliments(): 
+def compliments(
     global points_counter
     points.write(points_counter, font=("Ariel",20,"normal"))
     if points_counter==10:

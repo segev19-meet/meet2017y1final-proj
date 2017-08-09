@@ -15,37 +15,37 @@ turtle.penup()
 turtle.register_shape("meat.gif")
 turtle.hideturtle()
 food = turtle.clone()
-##food.shape("meat.gif")
-##food.goto(100,100)
-##
-##
+food.shape("meat.gif")
+food.goto(100,100)
+
+
 turtle.register_shape("pepper.gif")
-##food = turtle.clone()
-##food.shape("pepper.gif")
-##food.goto(100,150)
-##
-##
+food = turtle.clone()
+food.shape("pepper.gif")
+food.goto(100,150)
+
+
 turtle.register_shape("apple.gif")
-##food = turtle.clone()
-##food.shape("apple.gif")
-##food.goto(150,100)
-##
-##
+food = turtle.clone()
+food.shape("apple.gif")
+food.goto(150,100)
+
+
 turtle.register_shape("dairy_prod.gif")
-##food = turtle.clone()
-##food.shape("dairy_prod.gif")
-##food.goto(120,100)
-##
-##
-##
+food = turtle.clone()
+food.shape("dairy_prod.gif")
+food.goto(120,100)
+
+
+
 turtle.register_shape("carbs.gif")
-##food = turtle.clone()
-##food.shape("carbs.gif")
-##food.goto(150,150)
+food = turtle.clone()
+food.shape("carbs.gif")
+food.goto(150,150)
 
 
 
-#write code that will set some_shape = to a random filename
+
 
 food_pos_list = []
     

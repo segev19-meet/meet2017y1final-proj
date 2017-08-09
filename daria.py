@@ -25,6 +25,7 @@ for i in range(50):
 
 score=0
 def pop_shape(x,y):
+    global ball
     global score
     ball.goto(x,y)
     hit=turtle.pos()
