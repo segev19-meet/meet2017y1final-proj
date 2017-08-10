@@ -1,7 +1,17 @@
 import turtle
 import random
-
 turtle.tracer(1,0)
+
+
+
+turtle.bgcolor("light blue")
+turtle.penup()
+turtle.goto(-140,-150)
+turtle.pendown()
+turtle.write("Fubbles",font=("Ariel",50,"normal"))
+
+
+
 turtle.penup()
 SIZE_X=800
 SIZE_Y=500
@@ -34,7 +44,7 @@ turtle.penup()
 food.penup()
 food.hideturtle()
 turtle.hideturtle()
-turtle.register_shape("meat.gif")
+turtle.register_shape("meat2.gif")
 turtle.register_shape("pepper.gif")
 turtle.register_shape("apple.gif")
 turtle.register_shape("dairy_prod.gif")
@@ -56,7 +66,7 @@ def make_food():
     elif food_type==2:
         food.shape("pepper.gif")
     elif food_type==3:
-        food.shape("meat.gif")
+        food.shape("meat2.gif")
     elif food_type==4:
         food.shape("dairy_prod.gif")
     else:

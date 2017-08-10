@@ -4,12 +4,15 @@ SIZE_X=800
 SIZE_Y=500
 turtle.tracer(1,)
 turtle.setup(SIZE_X,SIZE_Y)
+turtle.penup()
+turtle.goto(-140,-150)
 
+turtle.pendown()
+turtle.write("Fubbles",font=("Ariel",50,"normal"))
+turtle.penup()
+turtle.goto(0,0)
 
-
-
-
-
+turtle.bgcolor("light blue")
 
 turtle.penup()
 turtle.register_shape("meat.gif")
@@ -78,6 +81,15 @@ def make_food():
     
 for i in range(70):
     make_food()
+
+
+
+
+
+
+
+
+    
 
     
 
