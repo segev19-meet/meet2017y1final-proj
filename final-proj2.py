@@ -1,7 +1,15 @@
-import turtle
-import random
+import turtle, random, time
 
-turtle.tracer(1,0)
+turtle.tracer(9,0)
+turtle.bgcolor("light blue")
+turtle.penup()
+turtle.goto(-140,-150)
+turtle.pendown()
+turtle.write("Fubbles",font=("Ariel",50,"normal"))
+
+
+
+
 turtle.penup()
 SIZE_X=800
 SIZE_Y=500
@@ -41,7 +49,7 @@ turtle.register_shape("key1.gif")
 turtle.register_shape("lorenzo.gif")
 turtle.register_shape("yun.gif")
 turtle.register_shape("abdalla.gif")
-
+turtle.register_shape("musa.gif")
 def make_food():
     min_x=-int(SIZE_X/2/55)+1
     max_x=int(SIZE_X/2/55)-1
@@ -52,7 +60,7 @@ def make_food():
     food.goto(food_x,food_y)
     
     
-    food_type = random.randint(1,7)
+    food_type = random.randint(1,8)
     if  food_type == 1:
          food.shape("amir.gif")
     elif food_type==2:
@@ -67,6 +75,8 @@ def make_food():
          food.shape("yun.gif")
     elif food_type==7:
         food.shape("abdalla.gif")
+    elif food_type==8:
+        food.shape("musa.gif")
     
 
     if (food_x,food_y) not in food_pos_list:   
@@ -87,7 +97,7 @@ ball=turtle.clone()
 
 def ball_appear():
     global kind
-    kind=random.randint(1,7)
+    kind=random.randint(1,8)
     print(kind)
 
     if   kind==1:
@@ -105,6 +115,8 @@ def ball_appear():
         ball.shape("yun.gif")
     elif kind==7:
         ball.shape("abdalla.gif")
+    elif kind==8:
+        ball.shape("musa.gif")
 
         
 
@@ -123,16 +135,21 @@ def compliments():
         points.goto(-70,-50)
         points.color("blue")
         points.write("Keep going!",font=("Ariel",20,"normal"))
-    elif score==70:
+    elif score==100:
         turtle.clear()
         points.goto(-120,-50)
         points.color("green")
         points.write("You are doing great!",font=("Ariel",20,"normal"))
-    elif score==80:
+    elif score==140:
         turtle.clear()
         points.goto(-140,-50)
         points.color("red")
         points.write("Nice work!You're on fire!!!",font=("Ariel",20,"normal"))
+    elif score==200:
+        turtle.clear()
+        points.goto(-140,-50)
+        points.color("black")
+        points.write("Game over,nice jobe!",font=("Ariel",20,"normal"))
 
 score=0
 def pop_shape(x,y):
@@ -166,9 +183,11 @@ def pop_shape(x,y):
                     
                 else:
                     turtle.clear()
-                    turtle.write("You lost!!!", font="100")
-
+                    turtle.goto(-100,-50)
+                    turtle.write("You lost!!!", font=("Ariel",40,"normal"))
+                    time.sleep(1)
                     quit()
+                    
 
 
 
